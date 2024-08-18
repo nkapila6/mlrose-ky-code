@@ -101,11 +101,11 @@
 | tests/test\_fitness.py                                    |       95 |        3 |     97% |     10-13 |
 | tests/test\_generators.py                                 |      450 |        4 |     99% |      8-12 |
 | tests/test\_gridsearch.py                                 |      114 |        7 |     94% |17-21, 60, 99, 165 |
-| tests/test\_neural.py                                     |      262 |        3 |     99% |     11-14 |
+| tests/test\_neural.py                                     |      307 |        0 |    100% |           |
 | tests/test\_opt\_probs.py                                 |      339 |        4 |     99% |     10-14 |
-| tests/test\_runners.py                                    |      238 |        5 |     98% |17-21, 103 |
+| tests/test\_runners.py                                    |      226 |        5 |     98% | 12-16, 94 |
 | tests/test\_samples.py                                    |       45 |        4 |     91% |     14-18 |
-|                                                 **TOTAL** | **4799** |  **865** | **82%** |           |
+|                                                 **TOTAL** | **4832** |  **862** | **82%** |           |
 
 
 ## Setup coverage badge
