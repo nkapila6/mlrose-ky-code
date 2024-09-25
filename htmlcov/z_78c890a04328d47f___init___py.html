@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_c7779a1287a995a2___init___py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.1">coverage.py v7.6.1</a>,
-            created at 2024-08-29 08:18 +0000
+            created at 2024-09-25 07:24 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -86,17 +86,17 @@
     <p class="pln"><span class="n"><a id="t4" href="#t4">4</a></span><span class="t"><span class="com"># License: BSD 3-clause</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t5" href="#t5">5</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t6" href="#t6">6</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">ga</span> <span class="key">import</span> <span class="nam">genetic_alg</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t7" href="#t7">7</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">sa</span> <span class="key">import</span> <span class="nam">simulated_annealing</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t7" href="#t7">7</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">gd</span> <span class="key">import</span> <span class="nam">gradient_descent</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t8" href="#t8">8</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">hc</span> <span class="key">import</span> <span class="nam">hill_climb</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t9" href="#t9">9</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">rhc</span> <span class="key">import</span> <span class="nam">random_hill_climb</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t10" href="#t10">10</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">gd</span> <span class="key">import</span> <span class="nam">gradient_descent</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t11" href="#t11">11</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">mimic</span> <span class="key">import</span> <span class="nam">mimic</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t9" href="#t9">9</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">mimic</span> <span class="key">import</span> <span class="nam">mimic</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t10" href="#t10">10</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">rhc</span> <span class="key">import</span> <span class="nam">random_hill_climb</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t11" href="#t11">11</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">sa</span> <span class="key">import</span> <span class="nam">simulated_annealing</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t12" href="#t12">12</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t13" href="#t13">13</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">crossovers</span> <span class="key">import</span> <span class="nam">UniformCrossover</span><span class="op">,</span> <span class="nam">TSPCrossover</span><span class="op">,</span> <span class="nam">OnePointCrossover</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t13" href="#t13">13</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">crossovers</span> <span class="key">import</span> <span class="nam">UniformCrossOver</span><span class="op">,</span> <span class="nam">TSPCrossOver</span><span class="op">,</span> <span class="nam">OnePointCrossOver</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t14" href="#t14">14</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t15" href="#t15">15</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">decay</span> <span class="key">import</span> <span class="nam">ArithmeticDecay</span><span class="op">,</span> <span class="nam">CustomDecay</span><span class="op">,</span> <span class="nam">ExponentialDecay</span><span class="op">,</span> <span class="nam">GeometricDecay</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t15" href="#t15">15</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">decay</span> <span class="key">import</span> <span class="nam">ArithDecay</span><span class="op">,</span> <span class="nam">CustomSchedule</span><span class="op">,</span> <span class="nam">ExpDecay</span><span class="op">,</span> <span class="nam">GeomDecay</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t16" href="#t16">16</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t17" href="#t17">17</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">mutators</span> <span class="key">import</span> <span class="nam">SingleGeneMutator</span><span class="op">,</span> <span class="nam">DiscreteGeneMutator</span><span class="op">,</span> <span class="nam">SingleShiftMutator</span><span class="op">,</span> <span class="nam">GeneSwapMutator</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t17" href="#t17">17</a></span><span class="t"><span class="key">from</span> <span class="op">.</span><span class="nam">mutators</span> <span class="key">import</span> <span class="nam">ChangeOneMutator</span><span class="op">,</span> <span class="nam">DiscreteMutator</span><span class="op">,</span> <span class="nam">ShiftOneMutator</span><span class="op">,</span> <span class="nam">SwapMutator</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
@@ -106,7 +106,7 @@
             <a class="nav" href="z_c7779a1287a995a2___init___py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.1">coverage.py v7.6.1</a>,
-            created at 2024-08-29 08:18 +0000
+            created at 2024-09-25 07:24 +0000
         </p>
     </div>
 </footer>
