@@ -79,11 +79,11 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">🤔 Optimization Problems</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#discrete-optimisation-problem">Discrete Optimisation Problem</a>
+    <li class="toctree-l2"><a class="reference internal" href="#discrete-optimization-problem">Discrete Optimization Problem</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#continuous-optimisation-problem">Continuous Optimisation Problem</a>
+    <li class="toctree-l2"><a class="reference internal" href="#continuous-optimization-problem">Continuous Optimization Problem</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#travelling-salesperson-optimisation-problem">Travelling Salesperson Optimisation Problem</a>
+    <li class="toctree-l2"><a class="reference internal" href="#travelling-salesperson-optimization-problem">Travelling Salesperson Optimization Problem</a>
     </li>
     </ul>
                   </li>
@@ -402,9 +402,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="optimisation-problem-types">Optimisation Problem Types<a class="headerlink" href="#optimisation-problem-types" title="Permanent link">#</a></h1>
+                <h1 id="optimization-problem-types">Optimization Problem Types<a class="headerlink" href="#optimization-problem-types" title="Permanent link">#</a></h1>
 <p>Classes for defining optimization problem objects.</p>
-<h3 id="discrete-optimisation-problem">Discrete Optimisation Problem<a class="headerlink" href="#discrete-optimisation-problem" title="Permanent link">#</a></h3>
+<h3 id="discrete-optimization-problem">Discrete Optimization Problem<a class="headerlink" href="#discrete-optimization-problem" title="Permanent link">#</a></h3>
 <p>Class for defining discrete-state optimization problems.</p>
 <div class="admonition info">
 <p class="admonition-title">class</p>
@@ -417,8 +417,8 @@
 <li><strong>maximize</strong> (<em>bool, default: True</em>) – Whether to maximize the fitness function. Set <code>False</code> for minimization problem.</li>
 <li><strong>max_val</strong> (<em>int, default: 2</em>) – Number of unique values that each element in the state vector can take. Assumes values are integers in the range 0 to (max_val - 1), inclusive.</li>
 </ul>
-<h3 id="continuous-optimisation-problem">Continuous Optimisation Problem<a class="headerlink" href="#continuous-optimisation-problem" title="Permanent link">#</a></h3>
-<p>Class for defining continuous-state optimisation problems.</p>
+<h3 id="continuous-optimization-problem">Continuous Optimization Problem<a class="headerlink" href="#continuous-optimization-problem" title="Permanent link">#</a></h3>
+<p>Class for defining continuous-state optimization problems.</p>
 <div class="admonition info">
 <p class="admonition-title">class</p>
 <p><em>class</em> <code>ContinuousOpt</code>(<em>length</em>, <em>fitness_fn</em>, <em>maximize=True</em>, <em>min_val=0</em>, <em>max_val=1</em>, <em>step=0.1</em>)</p>
@@ -432,8 +432,8 @@
 <li><strong>max_val</strong> (<em>float, default: 1</em>) – Maximum value that each element of the state vector can take.</li>
 <li><strong>step</strong> (<em>float, default: 0.1</em>) – Step size used in determining neighbors of current state.</li>
 </ul>
-<h3 id="travelling-salesperson-optimisation-problem">Travelling Salesperson Optimisation Problem<a class="headerlink" href="#travelling-salesperson-optimisation-problem" title="Permanent link">#</a></h3>
-<p>Class for defining travelling salesperson optimisation problems.</p>
+<h3 id="travelling-salesperson-optimization-problem">Travelling Salesperson Optimization Problem<a class="headerlink" href="#travelling-salesperson-optimization-problem" title="Permanent link">#</a></h3>
+<p>Class for defining travelling salesperson optimization problems.</p>
 <div class="admonition info">
 <p class="admonition-title">class</p>
 <p><em>class</em> <code>TSPOpt</code>(<em>length</em>, <em>fitness_fn=None</em>, <em>maximize=False</em>, <em>coords=None</em>, <em>distances=None</em>)</p>
