@@ -428,6 +428,20 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">4 - How to use NeuralNetwork() with sklearn (EASY)</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#import-libraries">Import libraries</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loading-the-dataset-and-some-pre-processing">Loading the dataset and some pre-processing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instantiating-the-neuralnetwork-object">Instantiating the NeuralNetwork Object</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#validation-curves">Validation Curves</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#learning-curve">Learning curve</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loss-curve">Loss curve</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#computing-performance-on-the-test-set">Computing performance on the test set.</a>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -461,7 +475,7 @@
 <p>Since NeuralNetwork() is a child class of sklearn's ClassifierMixin, it has access to it's methods and can use sklearn functions too.</p>
 <p>In this example, we shall find weights using genetic algorithms (GA).<br />
 Note: If you used torch in A1, then it's best to peruse the pyperch library instead. Otherwise, you'd have to re-do your A1 neural network experiments in sklearn.</p>
-<h1 id="import-libraries">Import libraries<a class="headerlink" href="#import-libraries" title="Permanent link">#</a></h1>
+<h2 id="import-libraries">Import libraries<a class="headerlink" href="#import-libraries" title="Permanent link">#</a></h2>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">mlrose_ky</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">mlrose_ky.neural.neural_network</span> <span class="kn">import</span> <span class="n">NeuralNetwork</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -481,7 +495,7 @@ Note: If you used torch in A1, then it's best to peruse the pyperch library inst
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">rng</span> <span class="o">=</span> <span class="mi">1</span>
 </span></code></pre></div>
-<h1 id="loading-the-dataset-and-some-pre-processing">Loading the dataset and some pre-processing<a class="headerlink" href="#loading-the-dataset-and-some-pre-processing" title="Permanent link">#</a></h1>
+<h2 id="loading-the-dataset-and-some-pre-processing">Loading the dataset and some pre-processing<a class="headerlink" href="#loading-the-dataset-and-some-pre-processing" title="Permanent link">#</a></h2>
 <p>We load the wine dataset, apply bins and perform scaling to reduce fit times.</p>
 <p><strong>Please use the same pre-processing that you have done as in A1 so the algorithms work on the same target dataset as per A1.</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;dataset/winequality-red.csv&#39;</span>
@@ -502,7 +516,7 @@ Note: If you used torch in A1, then it's best to peruse the pyperch library inst
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train1</span><span class="p">)</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test1</span><span class="p">)</span>
 </span></code></pre></div>
-<h1 id="instantiating-the-neuralnetwork-object">Instantiating the NeuralNetwork Object<a class="headerlink" href="#instantiating-the-neuralnetwork-object" title="Permanent link">#</a></h1>
+<h2 id="instantiating-the-neuralnetwork-object">Instantiating the NeuralNetwork Object<a class="headerlink" href="#instantiating-the-neuralnetwork-object" title="Permanent link">#</a></h2>
 <p>We instantiate the NeuralNetwork() object and define the different pop sizes we want to perform validation on by keeping other parameters constant.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">nn_ga</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">(</span><span class="n">hidden_nodes</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> 
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                      <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;genetic_alg&#39;</span><span class="p">,</span> 
@@ -515,7 +529,7 @@ Note: If you used torch in A1, then it's best to peruse the pyperch library inst
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>                      <span class="n">curve</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">pop_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">700</span><span class="p">,</span><span class="mi">1000</span><span class="p">]</span>
 </span></code></pre></div>
-<h1 id="validation-curves">Validation Curves<a class="headerlink" href="#validation-curves" title="Permanent link">#</a></h1>
+<h2 id="validation-curves">Validation Curves<a class="headerlink" href="#validation-curves" title="Permanent link">#</a></h2>
 <p>Here we use scikit-learn's validation_curve() method and ValidationCurveDisplayMethod(). Hear your computer go brrrr if you use n_jobs=-1!</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ga_train_pop_size</span><span class="p">,</span> <span class="n">ga_valid_pop_size</span> <span class="o">=</span> <span class="n">validation_curve</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">nn_ga</span><span class="p">,</span> 
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                                                        <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span> 
@@ -538,7 +552,7 @@ Note: If you used torch in A1, then it's best to peruse the pyperch library inst
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GA: Varying population sizes&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <p><img alt="png" src="../nn_class_with_sklearn_files/nn_class_with_sklearn_9_0.png" /></p>
-<h1 id="learning-curve">Learning curve<a class="headerlink" href="#learning-curve" title="Permanent link">#</a></h1>
+<h2 id="learning-curve">Learning curve<a class="headerlink" href="#learning-curve" title="Permanent link">#</a></h2>
 <p>Once you have identified the best parameter combination using manual tuning, grid search or whatever library. You can make a new classifier to plot the learning curve.</p>
 <p>Here we identify that a pop_size of 100 and mutation probability of 25% works well so we go ahead and define the new classifier below.<br />
 Once the new object is instantiated, we use learning_curve() and LearningCurveDisplay() methods to plot the learning curve.</p>
@@ -572,7 +586,7 @@ Once the new object is instantiated, we use learning_curve() and LearningCurveDi
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GA: Learning Curve&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <p><img alt="png" src="../nn_class_with_sklearn_files/nn_class_with_sklearn_12_0.png" /></p>
-<h1 id="loss-curve">Loss curve<a class="headerlink" href="#loss-curve" title="Permanent link">#</a></h1>
+<h2 id="loss-curve">Loss curve<a class="headerlink" href="#loss-curve" title="Permanent link">#</a></h2>
 <p>Once .fit() is called on your final classifier. We can use the .fitness_curve on the object to get our loss curve out.<br />
 The length is used as a training iteration and the second column gives us the loss values.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">nn_ga_final</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -584,7 +598,7 @@ The length is used as a training iteration and the second column gives us the lo
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Training Iteration&#39;</span><span class="p">)</span>
 </span></code></pre></div>
 <p><img alt="png" src="../nn_class_with_sklearn_files/nn_class_with_sklearn_14_0.png" /></p>
-<h1 id="computing-performance-on-the-test-set">Computing performance on the test set.<a class="headerlink" href="#computing-performance-on-the-test-set" title="Permanent link">#</a></h1>
+<h2 id="computing-performance-on-the-test-set">Computing performance on the test set.<a class="headerlink" href="#computing-performance-on-the-test-set" title="Permanent link">#</a></h2>
 <p>Similar to sklearn, we can use the .predict() method to use our TRAINED GA classifier to make predictions on the test set.<br />
 These predictions are then checked against original target labels to give us the accuracy.</p>
 <p>The .score() gives us the accuracy but you can use your own scoring metric based on what was chosen in A1.</p>
